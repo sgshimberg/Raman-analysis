@@ -136,7 +136,7 @@ void parseData() {      // split the data into its parts
 
     }
 
-    else if (command =='temp') {
+    else if (command =="temp") {
       
       strtokIndx = strtok(NULL, ",");
       actual_temp = atof(strtokIndx);     // convert this part to a float
