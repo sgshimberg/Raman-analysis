@@ -29,21 +29,7 @@ class Temperature_Control:
         #temperature write to SV
         self.instrument.write_register(4097, int(SV), 1) 
 
-    def arduino_temperature(self):
-        while True:
-            temperature = self.Current_temperature()
-            temperature_str = f"{temperature:.2f}\n"
-            self.arduino.write(temperature_str.encode())
-            print(f"temperature Sent: {temperature:.2f}")
-            time.sleep(1)
-            
-
-controller = Temperature_Control()
-
-AT1 = threading.Thread(target=controller.arduino_temperature)
-AT1.daemon = True
-AT1.start()
-
+    
 
 
 
